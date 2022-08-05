@@ -19,7 +19,7 @@ const SearchInput = ({setLat,setLong}) => {
     if(city.trim().length === 0){
       
     }else{
-      fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=a2f52bd791bdfae7b687b23cf49cba0a`)
+      fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.REACT_APP_API}`)
       .then((res) => res.json())
       .then((data) => {
         setLat(data[0].lat);

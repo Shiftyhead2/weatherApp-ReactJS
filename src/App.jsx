@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     if(lat && long){
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a2f52bd791bdfae7b687b23cf49cba0a&units=metric`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API}&units=metric`)
       .then((res) => res.json())
       .then((data) => {
         setWeather(data);
