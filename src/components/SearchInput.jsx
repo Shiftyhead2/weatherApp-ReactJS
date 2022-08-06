@@ -24,13 +24,14 @@ const SearchInput = ({setLat,setLong}) => {
       .then((data) => {
         setLat(data[0].lat);
         setLong(data[0].lon);
+        setCity("");
       })
       .catch((err) => console.error(err));
     }
   },[city])
 
   return (
-    <div>
+    <div className='form-input'>
       <input type= "text" placeholder='Enter a city name' value = {value} onChange = {inputFieldHandler}></input>
       <button onClick= {onClickHandler}>Search</button>
     </div>

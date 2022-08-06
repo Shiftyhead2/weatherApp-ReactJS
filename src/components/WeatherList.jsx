@@ -1,10 +1,10 @@
 import React from 'react';
 import WeatherCard from './WeatherCard';
 
-const WeatherList = ({weatherCurrent}) => {
+const WeatherList = ({weather}) => {
   return (
     <div className='weather-container'>
-      <WeatherCard weatherCurrent = {weatherCurrent} />
+      <WeatherCard weather = {weather} />
     </div>
   );
 }

@@ -7,7 +7,8 @@ function App() {
 
   const [lat,setLat] = useState(null);
   const [long,setLong] = useState(null);
-  const[weather,setWeather] = useState([]);
+  const[weather,setWeather] = useState(null);
+
 
   useEffect(() => {
     getLocation();
@@ -22,7 +23,7 @@ function App() {
       })
       .catch((err) => console.error(err));
       }else{
-        setWeather([]);
+        setWeather(null);
       }
   },[lat,long]);
 
@@ -47,8 +48,9 @@ function App() {
     <>
        <h1>WeatherBoy</h1>
        <SearchInput setLat = {setLat} setLong = {setLong} />
+       {weather ? <h2>Current weather for {weather.name}</h2> : <></>}
        <div className='container'>
-          {Object.keys(weather).length > 0 ? <WeatherList weatherCurrent = {weather}/> : <div></div>}
+          {weather ? <WeatherList weather = {weather}/> : <></>}
        </div>
     </>
   );
