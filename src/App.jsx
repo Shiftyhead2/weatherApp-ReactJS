@@ -16,16 +16,17 @@ function App() {
 
   useEffect(() => {
     if(lat && long){
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API}&units=metric`)
-      .then((res) => res.json())
-      .then((data) => {
-        setWeather(data);
-      })
-      .catch((err) => console.error(err));
+        getWeather();
       }else{
         setWeather(null);
       }
   },[lat,long]);
+
+  const getWeather = async() => {
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API}&units=metric`);
+    const data = await res.json();
+    setWeather(data);
+  }
 
   const getLocation = () => {
     if(navigator.geolocation){
