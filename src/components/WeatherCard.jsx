@@ -5,7 +5,8 @@ const WeatherCard = ({weather}) => {
 
   const[showExtraInfo,setShowExtraInfo] = useState(false);
 
-  const onClickHandler = () => {
+  const onClickHandler = (event) => {
+    event.preventDefault();
     setShowExtraInfo(!showExtraInfo);
   }
 
@@ -27,7 +28,7 @@ const WeatherCard = ({weather}) => {
 
   
   return (
-    <div className='condition-container' onMouseEnter={onClickHandler} onMouseLeave = {onClickHandler}>
+    <div className='condition-container' onClick={onClickHandler}>
       <MainInfo weather = {weather} showExtraInfo = {showExtraInfo} getTemperature = {getTemperature}/>
     </div>
   );

@@ -11,6 +11,7 @@
   gap:2rem;
   height:100vh;
   background: lightblue;
+  overflow-x: hidden;
 }
 
 .container{
@@ -150,4 +151,9 @@ span{
 
 .extremeHot{
   color:darkred;
+}
+
+h3{
+  font-size: 1rem;
+  margin:0rem 1rem; 
 }
