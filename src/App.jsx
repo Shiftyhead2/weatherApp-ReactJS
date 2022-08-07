@@ -7,7 +7,7 @@ function App() {
 
   const [lat,setLat] = useState(null);
   const [long,setLong] = useState(null);
-  const[weather,setWeather] = useState(null);
+  const [weather,setWeather] = useState(null);
 
 
   useEffect(() => {
